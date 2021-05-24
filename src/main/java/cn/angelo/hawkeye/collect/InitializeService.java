@@ -1,27 +1,22 @@
 package cn.angelo.hawkeye.collect;
 
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-import javax.annotation.Resource;
-import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-
-public class InitializeService implements DisposableBean {
-
-    @Resource(name = "asyncExecutor")
-    private Executor asyncExecutor;
+public class InitializeService implements InitializingBean, DisposableBean {
 
 
-    public void init() {
-        asyncExecutor.execute(new StatiticsTask());
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new StatisticsTask(), 0, 10, TimeUnit.SECONDS);
+
     }
     @Override
     public void destroy() {
-        if (asyncExecutor instanceof DisposableBean) {
-            try {
-                ((DisposableBean) asyncExecutor).destroy();
-            } catch (Exception e) {
-            }
-        }
+
     }
 }
