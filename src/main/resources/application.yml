@@ -5,5 +5,5 @@ async:
     queueCapacity: 100
 logging:
   config: classpath:logback.xml
-zookeeper
+zookeeper:
   address: 1.117.90.230:2181
