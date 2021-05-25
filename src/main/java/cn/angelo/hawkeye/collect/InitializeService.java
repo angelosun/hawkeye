@@ -12,6 +12,7 @@ public class InitializeService implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new StatisticsTask(), 0, 10, TimeUnit.SECONDS);
 
     }

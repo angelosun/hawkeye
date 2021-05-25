@@ -1,8 +1,6 @@
 package cn.angelo.hawkeye.vo;
 
 public class CpuVo {
-
-
     /**
      * CPU核数
      */
@@ -32,4 +30,60 @@ public class CpuVo {
     private Double systemCpuLoadBetweenTricks;
 
     private Double systemCpuLoad;
+
+    public Integer getLogicalProcessorCount() {
+        return logicalProcessorCount;
+    }
+
+    public void setLogicalProcessorCount(Integer logicalProcessorCount) {
+        this.logicalProcessorCount = logicalProcessorCount;
+    }
+
+    public String getCpuSystemUsage() {
+        return cpuSystemUsage;
+    }
+
+    public void setCpuSystemUsage(String cpuSystemUsage) {
+        this.cpuSystemUsage = cpuSystemUsage;
+    }
+
+    public String getCpuUserUsage() {
+        return cpuUserUsage;
+    }
+
+    public void setCpuUserUsage(String cpuUserUsage) {
+        this.cpuUserUsage = cpuUserUsage;
+    }
+
+    public String getCpuCurrentWaitPercent() {
+        return cpuCurrentWaitPercent;
+    }
+
+    public void setCpuCurrentWaitPercent(String cpuCurrentWaitPercent) {
+        this.cpuCurrentWaitPercent = cpuCurrentWaitPercent;
+    }
+
+    public String getCpuAvailiablePercent() {
+        return cpuAvailiablePercent;
+    }
+
+    public void setCpuAvailiablePercent(String cpuAvailiablePercent) {
+        this.cpuAvailiablePercent = cpuAvailiablePercent;
+    }
+
+    public Double getSystemCpuLoadBetweenTricks() {
+        return systemCpuLoadBetweenTricks;
+    }
+
+    public void setSystemCpuLoadBetweenTricks(Double systemCpuLoadBetweenTricks) {
+        this.systemCpuLoadBetweenTricks = systemCpuLoadBetweenTricks;
+    }
+
+    public Double getSystemCpuLoad() {
+        return systemCpuLoad;
+    }
+
+    public void setSystemCpuLoad(Double systemCpuLoad) {
+        this.systemCpuLoad = systemCpuLoad;
+    }
 }
