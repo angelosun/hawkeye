@@ -8,16 +8,14 @@ import org.apache.curator.retry.RetryNTimes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.CountDownLatch;
 
 public class ZkWatcher {
 
-    public static ZkWatcher instance = new ZkWatcher();
     public static final Logger LOG = LoggerFactory.getLogger(ZkWatcher.class);
 
-    private CuratorFramework client;
+    public static ZkWatcher instance = new ZkWatcher();
 
-    private CountDownLatch connectedSemaphore = new CountDownLatch(1);
+    private CuratorFramework client;
 
     private String zkAddr;
 
