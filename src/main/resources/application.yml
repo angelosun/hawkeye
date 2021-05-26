@@ -1,8 +1,3 @@
-async:
-  executor:
-    corePoolSize: 10
-    maxPoolSize: 20
-    queueCapacity: 100
 logging:
   config: classpath:logback.xml
 zookeeper:
