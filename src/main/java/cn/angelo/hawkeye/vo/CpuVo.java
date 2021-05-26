@@ -24,12 +24,21 @@ public class CpuVo {
     /**
      * CPU当前空闲率
      */
-    private String cpuAvailiablePercent;
+    private String cpuAvailablePercent;
 
 
     private Double systemCpuLoadBetweenTricks;
 
     private Double systemCpuLoad;
+
+    @Override
+    public String toString() {
+        return this.logicalProcessorCount + "|" + this.cpuSystemUsage + "|" + this.cpuUserUsage + "|" +
+                this.cpuCurrentWaitPercent + "|" + this.cpuAvailablePercent + "|" + this.systemCpuLoadBetweenTricks + "|" + this.systemCpuLoad;
+
+    }
+
+
 
     public Integer getLogicalProcessorCount() {
         return logicalProcessorCount;
@@ -63,12 +72,12 @@ public class CpuVo {
         this.cpuCurrentWaitPercent = cpuCurrentWaitPercent;
     }
 
-    public String getCpuAvailiablePercent() {
-        return cpuAvailiablePercent;
+    public String getCpuAvailablePercent() {
+        return cpuAvailablePercent;
     }
 
-    public void setCpuAvailiablePercent(String cpuAvailiablePercent) {
-        this.cpuAvailiablePercent = cpuAvailiablePercent;
+    public void setCpuAvailablePercent(String cpuAvailablePercent) {
+        this.cpuAvailablePercent = cpuAvailablePercent;
     }
 
     public Double getSystemCpuLoadBetweenTricks() {

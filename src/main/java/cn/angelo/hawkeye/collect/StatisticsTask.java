@@ -1,6 +1,7 @@
 package cn.angelo.hawkeye.collect;
 
 import cn.angelo.hawkeye.vo.CpuVo;
+import cn.angelo.hawkeye.zk.ZkWatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;
@@ -11,8 +12,11 @@ import java.util.concurrent.TimeUnit;
 
 public class StatisticsTask implements Runnable {
 
+
     public static final Logger LOG = LoggerFactory.getLogger(StatisticsTask.class);
 
+    public StatisticsTask() {
+    }
     @Override
     public void run() {
         try {
@@ -36,7 +40,7 @@ public class StatisticsTask implements Runnable {
                 cpuVo.setCpuSystemUsage(new DecimalFormat("#.##%").format(cSys * 1.0 / totalCpu));
                 cpuVo.setCpuUserUsage(new DecimalFormat("#.##%").format(user * 1.0 / totalCpu));
                 cpuVo.setCpuCurrentWaitPercent(new DecimalFormat("#.##%").format(iowait * 1.0 / totalCpu));
-                cpuVo.setCpuAvailiablePercent(new DecimalFormat("#.##%").format(idle * 1.0 / totalCpu));
+                cpuVo.setCpuAvailablePercent(new DecimalFormat("#.##%").format(idle * 1.0 / totalCpu));
                 cpuVo.setSystemCpuLoadBetweenTricks(processor.getSystemCpuLoadBetweenTicks());
                 cpuVo.setSystemCpuLoad(processor.getSystemCpuLoad());
 
@@ -47,6 +51,7 @@ public class StatisticsTask implements Runnable {
                 LOG.info("cpu当前空闲率:" + new DecimalFormat("#.##%").format(idle * 1.0 / totalCpu));
                 LOG.info("CPU load: %.1f%% (counting ticks)%n", processor.getSystemCpuLoadBetweenTicks() * 100);
                 LOG.info("CPU load: %.1f%% (OS MXBean)%n", processor.getSystemCpuLoad() * 100);
+                ZkWatcher.getInstance().writeData("/statistics/cpu", cpuVo.toString());
         } catch (Exception e) {
             LOG.error("error", e);
         }
