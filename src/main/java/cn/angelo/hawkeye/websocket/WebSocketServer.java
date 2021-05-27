@@ -8,7 +8,6 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-import cn.angelo.hawkeye.zk.ZkWatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -25,8 +24,7 @@ public class WebSocketServer {
     /**与某个客户端的连接会话，需要通过它来给客户端发送数据*/
     private Session session;
 
-    /**
-     * 连接建立成功调用的方法*/
+
     @OnOpen
     public void onOpen(Session session) {
         this.session = session;
@@ -46,16 +44,22 @@ public class WebSocketServer {
         webSocketMap.remove(session.getId());
 
     }
+
     /**
      * 实现服务器主动推送
+     * @param message
+     * @throws IOException
      */
     public void sendMessage(String message) throws IOException {
         this.session.getBasicRemote().sendText(message);
     }
 
+
     /**
      * 发送自定义消息
-     * */
+     * @param statisticsData
+     * @throws IOException
+     */
     public static void pushDataToWeb(String statisticsData) throws IOException {
         LOG.info("发送消息到报文:{}", statisticsData);
 
