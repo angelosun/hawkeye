@@ -12,10 +12,12 @@ import java.util.concurrent.TimeUnit;
 
 public class StatisticsTask implements Runnable {
 
+    private String hostAddress;
 
     public static final Logger LOG = LoggerFactory.getLogger(StatisticsTask.class);
 
-    public StatisticsTask() {
+    public StatisticsTask(String hostAddress) {
+        this.hostAddress = hostAddress;
     }
     @Override
     public void run() {
@@ -51,7 +53,7 @@ public class StatisticsTask implements Runnable {
                 LOG.info("cpu当前空闲率:" + new DecimalFormat("#.##%").format(idle * 1.0 / totalCpu));
                 LOG.info("CPU load: %.1f%% (counting ticks)%n", processor.getSystemCpuLoadBetweenTicks() * 100);
                 LOG.info("CPU load: %.1f%% (OS MXBean)%n", processor.getSystemCpuLoad() * 100);
-                ZkWatcher.getInstance().writeData("/statistics/cpu", cpuVo.toString());
+                ZkWatcher.getInstance().writeData(CpuVo.ZK_PATH + "_" + hostAddress, cpuVo.toString());
         } catch (Exception e) {
             LOG.error("error", e);
         }

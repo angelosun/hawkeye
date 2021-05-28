@@ -19,7 +19,6 @@ public class ZkWatcher {
 
     private String zkAddr;
 
-    private String zkPath;
 
     private ZkWatcher() {}
 
@@ -73,11 +72,5 @@ public class ZkWatcher {
         this.zkAddr = zkAddr;
     }
 
-    public String getZkPath() {
-        return zkPath;
-    }
 
-    public void setZkPath(String zkPath) {
-        this.zkPath = zkPath;
-    }
 }
