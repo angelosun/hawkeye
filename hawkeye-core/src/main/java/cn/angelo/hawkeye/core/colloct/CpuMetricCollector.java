@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * Date: 2021/5/31 15:26
  * Description:
  */
-public class CpuMetricCollector extends ICollector {
+public class CpuMetricCollector implements Runnable {
 
     public static final Logger LOG = LoggerFactory.getLogger(CpuMetricCollector.class);
 

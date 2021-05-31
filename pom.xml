@@ -20,8 +20,7 @@
 	<modules>
 		<module>hawkeye-spring</module>
 		<module>hawkeye-core</module>
-        <module>hawkeye-admin</module>
-		<module>hawkeye-demo</module>
+		<module>hawkeye-admin</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>hawkEye</name>
@@ -49,40 +48,11 @@
 	</dependencyManagement>
  	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-autoconfigure</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.72</version>
 			<type>jar</type>
 		</dependency>
-		<dependency>
-			<groupId>com.taobao.arthas</groupId>
-			<artifactId>arthas-spring-boot-starter</artifactId>
-			<version>3.4.8</version>
-			<type>jar</type>
-		</dependency>
-
-
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

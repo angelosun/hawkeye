@@ -1,15 +1,13 @@
-package cn.angelo.hawkeye.admin.spring.boot;
+package cn.angelo.hawkeye.spring.boot;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Author: angelo
  * Date: 2021/5/31 15:28
  * Description:
  */
-@Configuration
 @ConfigurationProperties(prefix = "hwakeye")
 public class HawkEyeProperties {
 
