@@ -1,4 +1,4 @@
-package cn.angelo.hawkeye.admin.core.model;
+package cn.angelo.hawkeye.core.model;
 
 public class CpuVo {
     /**

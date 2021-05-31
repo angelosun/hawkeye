@@ -1,4 +1,4 @@
-package cn.angelo.hawkeye.admin.core.colloct;
+package cn.angelo.hawkeye.core.colloct;
 
 /**
  * Author: junyingcao

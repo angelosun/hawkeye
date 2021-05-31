@@ -21,7 +21,8 @@
 		<module>hawkeye-spring</module>
 		<module>hawkeye-core</module>
         <module>hawkeye-admin</module>
-    </modules>
+		<module>hawkeye-demo</module>
+	</modules>
 	<packaging>pom</packaging>
 	<name>hawkEye</name>
 	<description>Demo project for Spring Boot</description>

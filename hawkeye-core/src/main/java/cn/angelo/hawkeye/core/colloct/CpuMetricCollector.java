@@ -1,7 +1,7 @@
-package cn.angelo.hawkeye.admin.core.colloct;
+package cn.angelo.hawkeye.core.colloct;
 
-import cn.angelo.hawkeye.admin.core.model.CpuVo;
-import cn.angelo.hawkeye.admin.core.zookeeper.ZkWatcher;
+import cn.angelo.hawkeye.core.model.CpuVo;
+import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;

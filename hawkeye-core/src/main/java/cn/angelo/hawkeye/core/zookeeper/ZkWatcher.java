@@ -1,4 +1,4 @@
-package cn.angelo.hawkeye.admin.core.zookeeper;
+package cn.angelo.hawkeye.core.zookeeper;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;

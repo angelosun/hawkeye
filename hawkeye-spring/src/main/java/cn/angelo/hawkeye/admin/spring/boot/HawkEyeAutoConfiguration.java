@@ -1,6 +1,6 @@
 package cn.angelo.hawkeye.admin.spring.boot;
 
-import cn.angelo.hawkeye.admin.core.zookeeper.ZkWatcher;
+import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
