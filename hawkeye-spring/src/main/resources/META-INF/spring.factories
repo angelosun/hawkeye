@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.angelo.hawkeye.admin.spring.boot.HawkEyeAutoConfiguration

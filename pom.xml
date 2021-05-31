@@ -17,7 +17,12 @@
             </plugin>
         </plugins>
     </build>
-    <packaging>war</packaging>
+	<modules>
+		<module>hawkeye-spring</module>
+		<module>hawkeye-core</module>
+        <module>hawkeye-admin</module>
+    </modules>
+	<packaging>pom</packaging>
 	<name>hawkEye</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -42,24 +47,6 @@
 		</dependencies>
 	</dependencyManagement>
  	<dependencies>
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<!--All of the recipes listed on the ZooKeeper recipes doc (except two phase commit).-->
-			<version>${apache-curator.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-framework</artifactId>
-			<!-- High-level API that greatly simplifies using ZooKeeper. -->
-			<version>${apache-curator.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-client</artifactId>
-			<!-- Low-level API -->
-			<version>${apache-curator.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -93,11 +80,7 @@
 			<type>jar</type>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.oshi</groupId>
-			<artifactId>oshi-core</artifactId>
-			<version>3.4.4</version>
-		</dependency>
+
 
 
 		<dependency>
