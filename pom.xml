@@ -21,6 +21,7 @@
 		<module>hawkeye-spring</module>
 		<module>hawkeye-core</module>
 		<module>hawkeye-admin</module>
+		<module>hawkeye-demo</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>hawkEye</name>
