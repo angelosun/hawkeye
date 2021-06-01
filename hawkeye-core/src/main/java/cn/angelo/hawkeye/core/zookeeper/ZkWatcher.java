@@ -2,9 +2,13 @@ package cn.angelo.hawkeye.core.zookeeper;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.recipes.cache.CuratorCache;
+import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
+import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.RetryNTimes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 
 public class ZkWatcher {
@@ -36,16 +40,15 @@ public class ZkWatcher {
         }
     }
 
-/*    public void addListener(String path) {
+    public void addListener(String path, NodeCacheListener nodeCacheListener) {
         CuratorCache curatorCache = CuratorCache.builder(client, path).build();
-        NodeChangeListener nodeChangeListener = new NodeChangeListener();
         CuratorCacheListener listener = CuratorCacheListener
                 .builder()
-                .forNodeCache(nodeChangeListener)
+                .forNodeCache(nodeCacheListener)
                 .build();
         curatorCache.listenable().addListener(listener);
         curatorCache.start();
-    }*/
+    }
 
 
 

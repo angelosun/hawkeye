@@ -1,0 +1,6 @@
+logging:
+  config: classpath:logback.xml
+zookeeper:
+  address: 1.117.90.230:2181
+server:
+  port: 8089
