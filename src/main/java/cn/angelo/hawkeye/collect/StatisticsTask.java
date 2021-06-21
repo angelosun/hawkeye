@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class StatisticsTask implements Runnable {
 
-    private String hostAddress;
+    private Stricng hostAddress;
 
     public static final Logger LOG = LoggerFactory.getLogger(StatisticsTask.class);
 

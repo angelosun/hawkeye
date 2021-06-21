@@ -1,7 +1,8 @@
-package cn.angelo.hawkeye.zk;
+package cn.angelo.hawkeye.admin.zookeeper;
 
-import cn.angelo.hawkeye.vo.CpuVo;
-import cn.angelo.hawkeye.websocket.WebSocketServer;
+import cn.angelo.hawkeye.admin.websocket.WebSocketServer;
+import cn.angelo.hawkeye.core.model.CpuVo;
+import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.apache.commons.lang.StringUtils;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.slf4j.Logger;
