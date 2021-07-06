@@ -4,7 +4,7 @@ import cn.angelo.hawkeye.core.colloct.CpuMetricCollector;
 import cn.angelo.hawkeye.core.colloct.MemMetricCollector;
 
 /**
- * Author: junyingcao
+ * Author: angelosun
  * Date: 2021/5/31 16:35
  * Description:
  */

@@ -4,7 +4,7 @@ package cn.angelo.hawkeye.core.colloct;
 import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
 
 /**
- * Author: junyingcao
+ * Author: angelosun
  * Date: 2021/5/31 15:44
  * Description:
  */

@@ -3,7 +3,7 @@ package cn.angelo.hawkeye.spring.boot;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Author: junyingcao
+ * Author: angelosun
  * Date: 2021/7/6 17:18
  * Description:
  */

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.Resource;
 
 /**
- * Author: junyingcao
+ * Author: angelosun
  * Date: 2021/6/1 19:10
  * Description:
  */

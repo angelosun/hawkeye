@@ -1,7 +1,7 @@
 package cn.angelo.hawkeye.core.model;
 
 /**
- * Author: junyingcao
+ * Author: angelosun
  * Date: 2021/7/6 15:11
  * Description:
  */
