@@ -27,7 +27,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @EnableConfigurationProperties({ClusterConfig.class, ExecutorConfig.class})
 public class HawkEyeAutoConfiguration implements InitializingBean, DisposableBean {
 
-    public static final Logger LOG = LoggerFactory.getLogger(CpuMetricCollector.class);
+    public static final Logger LOG = LoggerFactory.getLogger(HawkEyeAutoConfiguration.class);
 
     @Resource
     private ClusterConfig clusterConfig;
