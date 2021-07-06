@@ -1,7 +1,8 @@
 package cn.angelo.hawkeye.admin.zookeeper;
 
 import cn.angelo.hawkeye.admin.websocket.WebSocketServer;
-import cn.angelo.hawkeye.core.model.CpuVo;
+import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
+import cn.angelo.hawkeye.core.model.Constant;
 import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.apache.commons.lang.StringUtils;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
@@ -20,10 +21,12 @@ public class NodeChangeListener implements NodeCacheListener {
         LOG.info("node changed notification");
         InetAddress address = InetAddress.getLocalHost();
         String hostAddress = address.getHostAddress();
-        String data = ZkWatcher.getInstance().readData(CpuVo.ZK_PATH + "_" + hostAddress);
-        LOG.info("data : {}", data);
-        if (StringUtils.isNotBlank(data)) {
-            WebSocketServer.pushDataToWeb(data);
+        for (CollectorTypeEnum collectorTypeEnum : CollectorTypeEnum.values()) {
+            String data = ZkWatcher.getInstance().readData("/" + Constant.ZK_PATH_PREFIX + "/" + collectorTypeEnum.getZkPath());
+            LOG.info("data : {}", data);
+            if (StringUtils.isNotBlank(data)) {
+                WebSocketServer.pushDataToWeb(data);
+            }
         }
     }
 }

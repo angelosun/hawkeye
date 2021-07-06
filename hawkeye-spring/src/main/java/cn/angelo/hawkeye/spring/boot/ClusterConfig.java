@@ -8,8 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Date: 2021/5/31 15:28
  * Description:
  */
-@ConfigurationProperties(prefix = "hwakeye")
-public class HawkEyeProperties {
+@ConfigurationProperties(prefix = "hawkeye.cluster")
+public class ClusterConfig {
 
     private String clusterName;
 

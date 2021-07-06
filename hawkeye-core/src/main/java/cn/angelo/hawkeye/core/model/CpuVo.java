@@ -2,7 +2,6 @@ package cn.angelo.hawkeye.core.model;
 
 public class CpuVo {
 
-    public final static String ZK_PATH = "/statistics/cpu";
     /**
      * CPU核数
      */
