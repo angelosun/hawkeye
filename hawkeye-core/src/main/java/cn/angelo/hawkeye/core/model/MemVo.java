@@ -10,18 +10,18 @@ public class MemVo {
     /**
      * 内存总量
      */
-    private double total;
+    private long total;
 
     /**
      * 已用内存
      */
-    private double used;
+    private long used;
+
 
     /**
      * 剩余内存
      */
-    private double free;
-
+    private long free;
 
 
     @Override
@@ -29,28 +29,27 @@ public class MemVo {
         return this.total + "|" + this.used + "|" + this.free;
     }
 
-
-    public double getTotal() {
+    public long getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(long total) {
         this.total = total;
     }
 
-    public double getUsed() {
+    public long getUsed() {
         return used;
     }
 
-    public void setUsed(double used) {
+    public void setUsed(long used) {
         this.used = used;
     }
 
-    public double getFree() {
+    public long getFree() {
         return free;
     }
 
-    public void setFree(double free) {
+    public void setFree(long free) {
         this.free = free;
     }
 }

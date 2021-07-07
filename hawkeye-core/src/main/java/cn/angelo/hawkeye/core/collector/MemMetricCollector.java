@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;
 import oshi.hardware.HardwareAbstractionLayer;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -29,13 +31,17 @@ public class MemMetricCollector extends AbstractCollector {
                 TimeUnit.SECONDS.sleep(10);
                 SystemInfo si = new SystemInfo();
                 HardwareAbstractionLayer hal = si.getHardware();
-                memVo.setTotal(hal.getMemory().getTotal());
-                memVo.setFree(hal.getMemory().getAvailable());
-                memVo.setUsed(hal.getMemory().getTotal() - hal.getMemory().getAvailable());
+                memVo.setTotal(new BigDecimal(String.valueOf(hal.getMemory().getTotal())).setScale(2, RoundingMode.HALF_UP).longValue());
+                memVo.setFree(new BigDecimal(String.valueOf(hal.getMemory().getAvailable())).setScale(2, RoundingMode.HALF_UP).longValue());
+                memVo.setUsed(memVo.getTotal() - memVo.getFree());
+
+
+                CommonUtil.convertFileSize(new BigDecimal(String.valueOf(memVo.getTotal())).setScale(2, RoundingMode.HALF_UP).longValue());
+
                 LOG.info("内存情况 {} ", JSONObject.toJSONString(memVo));
-                LOG.info("总内存容量:" + CommonUtil.convertFileSize(Long.parseLong(String.valueOf(memVo.getTotal()))));
-                LOG.info("可用内存容量:" + CommonUtil.convertFileSize(Long.parseLong(String.valueOf(memVo.getFree()))));
-                LOG.info("已用内存容量:" + CommonUtil.convertFileSize(Long.parseLong(String.valueOf(memVo.getUsed()))));
+                LOG.info("总内存容量:" + CommonUtil.convertFileSize(memVo.getTotal()));
+                LOG.info("可用内存容量:" + CommonUtil.convertFileSize(memVo.getFree()));
+                LOG.info("已用内存容量:" + CommonUtil.convertFileSize(memVo.getUsed()));
 
                 ZkWatcher.getInstance().writeData("/" + Constant.ZK_PATH_PREFIX + "/" + getCollectorTypeEnum().getZkPath(), memVo.toString());
 
