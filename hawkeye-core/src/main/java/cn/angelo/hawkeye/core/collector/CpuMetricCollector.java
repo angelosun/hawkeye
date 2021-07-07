@@ -56,7 +56,7 @@ public class CpuMetricCollector extends AbstractCollector {
                 LOG.info("cpu当前空闲率:" + new DecimalFormat("#.##%").format(idle * 1.0 / totalCpu));
                 LOG.info("CPU load: %.1f%% (counting ticks)%n", processor.getSystemCpuLoadBetweenTicks() * 100);
                 LOG.info("CPU load: %.1f%% (OS MXBean)%n", processor.getSystemCpuLoad() * 100);
-                ZkWatcher.getInstance().writeData("/" + Constant.ZK_PATH_PREFIX + "/" + getCollectorTypeEnum().getZkPath(), cpuVo.toString());
+                ZkWatcher.getInstance().writeData(getZkPath(), cpuVo.toString());
             } catch (Exception e) {
                 LOG.error("error", e);
             }

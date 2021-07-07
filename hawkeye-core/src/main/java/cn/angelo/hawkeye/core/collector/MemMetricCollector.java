@@ -1,6 +1,5 @@
 package cn.angelo.hawkeye.core.collector;
 
-import cn.angelo.hawkeye.core.model.Constant;
 import cn.angelo.hawkeye.core.model.MemVo;
 import cn.angelo.hawkeye.core.util.CommonUtil;
 import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
@@ -43,7 +42,7 @@ public class MemMetricCollector extends AbstractCollector {
                 LOG.info("可用内存容量:" + CommonUtil.convertFileSize(memVo.getFree()));
                 LOG.info("已用内存容量:" + CommonUtil.convertFileSize(memVo.getUsed()));
 
-                ZkWatcher.getInstance().writeData("/" + Constant.ZK_PATH_PREFIX + "/" + getCollectorTypeEnum().getZkPath(), memVo.toString());
+                ZkWatcher.getInstance().writeData(getZkPath(), memVo.toString());
 
             } catch (Exception e) {
 

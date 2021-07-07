@@ -2,6 +2,7 @@ package cn.angelo.hawkeye.core.collector;
 
 
 import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
+import cn.angelo.hawkeye.core.model.Constant;
 
 /**
  * Author: angelosun
@@ -10,11 +11,16 @@ import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
  */
 public abstract class AbstractCollector implements Runnable {
 
+    private String clusterName;
 
     private CollectorTypeEnum collectorTypeEnum;
 
     @Override
     public void run() {
+    }
+
+    public String getZkPath() {
+        return "/" + Constant.ZK_PATH_PREFIX + "/" + clusterName +  "/" + getCollectorTypeEnum().getZkPath();
     }
 
 
@@ -24,5 +30,13 @@ public abstract class AbstractCollector implements Runnable {
 
     public void setCollectorTypeEnum(CollectorTypeEnum collectorTypeEnum) {
         this.collectorTypeEnum = collectorTypeEnum;
+    }
+
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
     }
 }

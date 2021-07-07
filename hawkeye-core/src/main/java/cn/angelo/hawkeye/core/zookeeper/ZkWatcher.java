@@ -9,6 +9,7 @@ import org.apache.curator.retry.RetryNTimes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 
 
 public class ZkWatcher {
@@ -51,9 +52,17 @@ public class ZkWatcher {
 
 
 
+    public List<String> getChild(String path) throws Exception {
+        return client.getChildren().forPath(path);
+    }
+
+
+
+
 
     public void writeData(String path, String data) throws Exception {
         client.create().orSetData().creatingParentsIfNeeded().forPath(path, data.getBytes());
+
     }
 
     public String readData(String path) throws Exception {

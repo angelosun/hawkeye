@@ -49,6 +49,7 @@ public class HawkEyeAutoConfiguration implements InitializingBean, DisposableBea
         zkWatcher.connection();
         for (CollectorTypeEnum typeEnum : CollectorTypeEnum.values()) {
             AbstractCollector collector = (AbstractCollector) typeEnum.getClazz().newInstance();
+            collector.setClusterName(clusterConfig.getClusterName());
             collector.setCollectorTypeEnum(typeEnum);
             asyncExecutor.execute(collector);
         }
