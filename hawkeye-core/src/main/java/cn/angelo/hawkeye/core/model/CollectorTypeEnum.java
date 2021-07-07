@@ -1,7 +1,7 @@
 package cn.angelo.hawkeye.core.model;
 
-import cn.angelo.hawkeye.core.colloct.CpuMetricCollector;
-import cn.angelo.hawkeye.core.colloct.MemMetricCollector;
+import cn.angelo.hawkeye.core.collector.CpuMetricCollector;
+import cn.angelo.hawkeye.core.collector.MemMetricCollector;
 
 /**
  * Author: angelosun

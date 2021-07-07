@@ -1,4 +1,4 @@
-package cn.angelo.hawkeye.core.colloct;
+package cn.angelo.hawkeye.core.collector;
 
 /**
  * Author: angelo
