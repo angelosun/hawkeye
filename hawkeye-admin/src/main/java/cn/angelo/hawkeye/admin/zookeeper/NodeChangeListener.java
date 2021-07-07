@@ -1,7 +1,6 @@
 package cn.angelo.hawkeye.admin.zookeeper;
 
 import cn.angelo.hawkeye.admin.websocket.WebSocketServer;
-import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
 import cn.angelo.hawkeye.core.model.Constant;
 import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.apache.commons.lang.StringUtils;
