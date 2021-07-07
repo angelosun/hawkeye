@@ -1,7 +1,6 @@
 package cn.angelo.hawkeye.spring.boot;
 
-import cn.angelo.hawkeye.core.colloct.AbstractCollector;
-import cn.angelo.hawkeye.core.colloct.CpuMetricCollector;
+import cn.angelo.hawkeye.core.collector.AbstractCollector;
 import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
 import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.slf4j.Logger;
