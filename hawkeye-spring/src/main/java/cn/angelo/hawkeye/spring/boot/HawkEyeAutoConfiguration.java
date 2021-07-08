@@ -1,7 +1,7 @@
 package cn.angelo.hawkeye.spring.boot;
 
 import cn.angelo.hawkeye.core.collector.AbstractCollector;
-import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
+import cn.angelo.hawkeye.core.model.CollectorEnum;
 import cn.angelo.hawkeye.core.zookeeper.ZkWatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +47,7 @@ public class HawkEyeAutoConfiguration implements InitializingBean, DisposableBea
         ZkWatcher zkWatcher = ZkWatcher.getInstance();
         zkWatcher.setZkAddr(clusterConfig.getRegistryAddress());
         zkWatcher.connection();
-        for (CollectorTypeEnum typeEnum : CollectorTypeEnum.values()) {
+        for (CollectorEnum typeEnum : CollectorEnum.values()) {
             AbstractCollector collector = (AbstractCollector) typeEnum.getClazz().newInstance();
             collector.setClusterName(clusterConfig.getClusterName());
             collector.setCollectorTypeEnum(typeEnum);

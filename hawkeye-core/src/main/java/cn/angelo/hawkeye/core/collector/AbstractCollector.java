@@ -1,7 +1,7 @@
 package cn.angelo.hawkeye.core.collector;
 
 
-import cn.angelo.hawkeye.core.model.CollectorTypeEnum;
+import cn.angelo.hawkeye.core.model.CollectorEnum;
 import cn.angelo.hawkeye.core.model.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public abstract class AbstractCollector implements Runnable {
 
     private String clusterName;
 
-    private CollectorTypeEnum collectorTypeEnum;
+    private CollectorEnum collectorEnum;
 
     @Override
     public void run() {
@@ -43,12 +43,12 @@ public abstract class AbstractCollector implements Runnable {
     }
 
 
-    public CollectorTypeEnum getCollectorTypeEnum() {
-        return collectorTypeEnum;
+    public CollectorEnum getCollectorTypeEnum() {
+        return collectorEnum;
     }
 
-    public void setCollectorTypeEnum(CollectorTypeEnum collectorTypeEnum) {
-        this.collectorTypeEnum = collectorTypeEnum;
+    public void setCollectorTypeEnum(CollectorEnum collectorEnum) {
+        this.collectorEnum = collectorEnum;
     }
 
     public String getClusterName() {

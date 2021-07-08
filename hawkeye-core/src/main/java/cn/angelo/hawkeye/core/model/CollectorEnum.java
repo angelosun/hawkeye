@@ -9,7 +9,7 @@ import cn.angelo.hawkeye.core.collector.MemMetricCollector;
  * Date: 2021/5/31 16:35
  * Description:
  */
-public enum CollectorTypeEnum {
+public enum CollectorEnum {
 
     CPU_COLLECTOR(1, CpuMetricCollector.class, "cpu"),
     MEM_COLLECTOR(2, MemMetricCollector.class, "mem"),
@@ -17,7 +17,7 @@ public enum CollectorTypeEnum {
     ;
 
 
-    CollectorTypeEnum(Integer type, Class clazz, String zkPath) {
+    CollectorEnum(Integer type, Class clazz, String zkPath) {
         this.type = type;
         this.clazz = clazz;
         this.zkPath = zkPath;
