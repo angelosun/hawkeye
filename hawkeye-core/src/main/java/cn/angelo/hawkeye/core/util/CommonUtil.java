@@ -13,7 +13,7 @@ public class CommonUtil {
      * @param size 字节大小
      * @return 转换后值
      */
-    public static String convertFileSize(long size) {
+    public static String capacityConversion(double size) {
         long kb = 1024;
         long mb = kb * 1024;
         long gb = mb * 1024;
@@ -26,7 +26,7 @@ public class CommonUtil {
             float f = (float) size / kb;
             return String.format(f > 100 ? "%.0f KB" : "%.1f KB", f);
         } else {
-            return String.format("%d B", size);
+            return String.format("%f B", size);
         }
     }
 

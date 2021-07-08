@@ -9,4 +9,6 @@ public class Constant {
 
     public final static String ZK_PATH_PREFIX = "statistics";
 
+    public final static Integer TIME_INTERVAL = 5;
+
 }

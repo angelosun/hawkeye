@@ -1,6 +1,7 @@
 package cn.angelo.hawkeye.core.model;
 
 import cn.angelo.hawkeye.core.collector.CpuMetricCollector;
+import cn.angelo.hawkeye.core.collector.JvmHeapMemMetricCollector;
 import cn.angelo.hawkeye.core.collector.MemMetricCollector;
 
 /**
@@ -11,7 +12,8 @@ import cn.angelo.hawkeye.core.collector.MemMetricCollector;
 public enum CollectorTypeEnum {
 
     CPU_COLLECTOR(1, CpuMetricCollector.class, "cpu"),
-    MEM_COLLECTOR(2,MemMetricCollector.class, "mem"),
+    MEM_COLLECTOR(2, MemMetricCollector.class, "mem"),
+    JVM_HEAP_MEM_COLLECTOR(3, JvmHeapMemMetricCollector.class, "jvm_heap_mem"),
     ;
 
 
