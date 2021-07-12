@@ -28,14 +28,14 @@ public abstract class AbstractCollector implements Runnable {
         while (true) {
             try {
                 TimeUnit.SECONDS.sleep(5);
-                deal();
+                collect();
             } catch (Exception e) {
                 LOG.error("失败", e);
             }
         }
     }
 
-    public abstract void deal() throws Exception;
+    public abstract void collect() throws Exception;
 
 
     public String getZkPath() {

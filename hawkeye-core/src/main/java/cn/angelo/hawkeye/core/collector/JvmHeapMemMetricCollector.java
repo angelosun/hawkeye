@@ -19,7 +19,7 @@ public class JvmHeapMemMetricCollector extends AbstractCollector {
 	public static final Logger LOG = LoggerFactory.getLogger(JvmHeapMemMetricCollector.class);
 
 	@Override
-	public void deal() throws Exception {
+	public void collect() throws Exception {
 		String pid = getPid();
 		String [] cmd = new String[] {"jstat", "-gc", pid};
 		Map map = JStat.jstat(cmd);

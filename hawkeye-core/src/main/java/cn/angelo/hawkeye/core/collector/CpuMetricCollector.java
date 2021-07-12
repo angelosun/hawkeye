@@ -20,7 +20,7 @@ public class CpuMetricCollector extends AbstractCollector {
 
 
     @Override
-    public void deal() throws Exception {
+    public void collect() throws Exception {
         SystemInfo systemInfo = new SystemInfo();
         CentralProcessor processor = systemInfo.getHardware().getProcessor();
         long[] prevTicks = processor.getSystemCpuLoadTicks();

@@ -23,7 +23,7 @@ public class MemMetricCollector extends AbstractCollector {
     public static final Logger LOG = LoggerFactory.getLogger(MemMetricCollector.class);
 
     @Override
-    public void deal() throws Exception {
+    public void collect() throws Exception {
         MemVo memVo = new MemVo();
         SystemInfo si = new SystemInfo();
         HardwareAbstractionLayer hal = si.getHardware();
