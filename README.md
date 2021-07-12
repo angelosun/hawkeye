@@ -1,2 +1,2 @@
 # hawkeye
-a SpringBoot + Zookeeper + WebSocket demo
+a web application perform monitor tool (SpringBoot + Zookeeper + WebSocket) 
