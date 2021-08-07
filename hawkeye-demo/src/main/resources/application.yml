@@ -1,7 +1,7 @@
 hawkeye:
   cluster:
     clusterName: test1
-    registryAddress: 1.117.90.230:2181
+    registryAddress: 111.117.90.230:2181
   executor:
     corePoolSize: 5
     maxPoolSize: 10
