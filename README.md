@@ -1,2 +1,2 @@
 # hawkeye
-a web application perform monitor tool (SpringBoot + Zookeeper + WebSocket) 
+基于SpringBoot + Zookeeper + WebSocket的web应用程序监控工具
