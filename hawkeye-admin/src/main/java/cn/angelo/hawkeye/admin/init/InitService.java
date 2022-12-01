@@ -32,6 +32,10 @@ public class InitService implements InitializingBean, DisposableBean {
 
         String parentPath = "/" + Constant.ZK_PATH_PREFIX;
         NodeChangeListener nodeChangeListener = null;
+
+        if (!zkWatcher.checkExist(parentPath)) {
+            zkWatcher.createPersistentNode(parentPath, "");
+        }
         List<String> clusterNamePathList = ZkWatcher.getInstance().getChild(parentPath);
         for (String clusterNamePath : clusterNamePathList) {
             String clusterNameFullPath = parentPath + "/" + clusterNamePath;

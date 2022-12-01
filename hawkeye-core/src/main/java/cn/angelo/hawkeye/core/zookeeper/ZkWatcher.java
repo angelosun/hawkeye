@@ -6,9 +6,11 @@ import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.RetryNTimes;
+import org.apache.zookeeper.CreateMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 
@@ -33,6 +35,18 @@ public class ZkWatcher {
         client = CuratorFrameworkFactory.newClient(this.zkAddr, new RetryNTimes(10, 5000));
         client.start();
     }
+
+    public void createPersistentNode(String path, String data) throws Exception {
+
+        this.client.create().withMode(CreateMode.PERSISTENT).forPath(path, data.getBytes(StandardCharsets.UTF_8));
+    }
+
+
+    public Boolean checkExist(String path) throws Exception {
+
+        return this.client.checkExists().forPath(path) != null;
+    }
+
 
     public void release() {
         if (null != client) {

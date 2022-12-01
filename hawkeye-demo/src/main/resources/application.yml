@@ -8,3 +8,5 @@ hawkeye:
     queueCapacity: 100
 logging:
   config: classpath:logback.xml
+server:
+  port: 8882
